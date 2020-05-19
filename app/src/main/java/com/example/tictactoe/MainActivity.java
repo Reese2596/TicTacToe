@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
         StartGame();
     }
 
-    private void newGame(){
+    private void newGame(View v){
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons[0].length; j++) {
                 buttons[i][j].setText("");
                 buttons[i][j].setEnabled(true);
             }
         }
+        StartGame();
     }
 
     private void CreateButtons(){
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     buttons[i][j].setText(currPlayer.playerName);
                 }
             }
-        }
+        };
+
         if(CheckWinner("X")){
             text.setText("Player X Wins");
             GameOver();

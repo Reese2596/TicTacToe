@@ -13,7 +13,7 @@
         android:layout_marginBottom="25dp"
         android:text="Player X's turn"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/newGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,23 +23,24 @@
         app:layout_constraintVertical_bias="0.755" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/newGame"
         android:layout_width="312dp"
         android:layout_height="83dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="35dp"
-        android:text="New Game"
+        android:text="@string/new_game"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.595"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:onClick="newGame" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="115"
-        android:layout_height="115"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
