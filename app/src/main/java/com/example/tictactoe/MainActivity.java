@@ -2,6 +2,7 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Player x;
     private Player o;
     private Player currPlayer;
+    private View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         StartGame();
     }
 
-    private void newGame(View v){
+    public void newGame(View v){
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons[0].length; j++) {
                 buttons[i][j].setText("");
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         PlayerDisplay(currPlayer);
     }
 
-    private void PlayGame(View v){
+    public void onClick(View v){
         for(int i = 0; i < buttons.length; i++){
             for(int j = 0; j < buttons[0].length; j++){
                 if(v == buttons[i][j] && buttons[i][j].getText() ==""){
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         else{
             currPlayer = x;
         }
+
+        PlayerDisplay(currPlayer);
     }
 
     private boolean TieGame() {
@@ -134,6 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void PlayerDisplay(Player currPlayer) {
-        text.setText("Player " + currPlayer + "'s turn");
+        text.setText("Player " + currPlayer.playerName + "'s turn");
     }
 }
